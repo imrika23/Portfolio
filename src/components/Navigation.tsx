@@ -37,8 +37,10 @@ const Navigation = () => {
                 {item.name}
               </button>
             ))}
-            <Button variant="hero" size="sm">
-              Download CV
+            <Button variant="hero" size="sm" asChild>
+              <a href="/Erika Joy Guamos-CV.pdf" download>
+                Download CV
+              </a>
             </Button>
           </div>
 
@@ -64,8 +66,10 @@ const Navigation = () => {
                   {item.name}
                 </button>
               ))}
-              <Button variant="hero" size="sm" className="w-fit">
-                Download CV
+              <Button variant="hero" size="sm" className="w-fit" asChild>
+                <a href="/Erika Joy Guamos-CV.pdf" download>
+                  Download CV
+                </a>
               </Button>
             </div>
           </div>

@@ -5,55 +5,32 @@ import { ExternalLink, Github } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with React, Node.js, and PostgreSQL. Features include user authentication, payment processing, and admin dashboard.",
-      image: "/placeholder.svg",
-      tech: ["React", "Node.js", "PostgreSQL", "Stripe", "AWS"],
-      github: "https://github.com",
-      demo: "https://demo.com",
+      title: "Point of Sale System",
+      description: "A full-stack point of sale system with MySQL and Visual Studio. Features include user authentication, payment processing, and admin dashboard.",
+      image: "/POS.jpg",
+      tech: ["MySQL", "Visual Basic", "Visual Studio"],
+      github: "https://github.com/imrika23/Point-of-Sale.git",
+      /*demo: "https://demo.com",*/
       featured: true
     },
     {
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      image: "/placeholder.svg",
-      tech: ["Vue.js", "Express", "MongoDB", "Socket.io", "Docker"],
-      github: "https://github.com",
-      demo: "https://demo.com",
+      title: "Calculator",
+      description: "A simple calculator application built with HTML, CSS and JavaScript.",
+      image: "/calculator.png",
+      tech: ["HTML", "CSS", "JavaScript"],
+      github: "https://github.com/imrika23/Calculator.git",
+      /*demo: "https://demo.com",*/
       featured: true
     },
     {
-      title: "Weather Dashboard",
-      description: "A responsive weather dashboard with location-based forecasts, interactive maps, and historical weather data visualization.",
-      image: "/placeholder.svg",
-      tech: ["React", "TypeScript", "Chart.js", "OpenWeather API"],
+      title: "FaceRe",
+      description: "Face recognition app use for attendance tracking with secure data storage using Firebase.",
+      image: "/facere.png",
+      tech: ["React Native", "Node.js", "Firebase"],
       github: "https://github.com",
-      demo: "https://demo.com"
+      /*demo: "https://demo.com",*/
+      featured: true
     },
-    {
-      title: "Social Media Analytics",
-      description: "Analytics dashboard for social media metrics with data visualization, automated reporting, and performance insights.",
-      image: "/placeholder.svg",
-      tech: ["Angular", "Python", "Django", "D3.js", "Redis"],
-      github: "https://github.com",
-      demo: "https://demo.com"
-    },
-    {
-      title: "Mobile Banking App",
-      description: "Secure mobile banking application with biometric authentication, transaction history, and budget tracking features.",
-      image: "/placeholder.svg",
-      tech: ["React Native", "Node.js", "MongoDB", "JWT", "Biometrics"],
-      github: "https://github.com",
-      demo: "https://demo.com"
-    },
-    {
-      title: "AI Content Generator",
-      description: "AI-powered content generation tool with natural language processing, content optimization, and multi-format export.",
-      image: "/placeholder.svg",
-      tech: ["Next.js", "Python", "OpenAI API", "TensorFlow", "Vercel"],
-      github: "https://github.com",
-      demo: "https://demo.com"
-    }
   ];
 
   return (
@@ -72,11 +49,11 @@ const Projects = () => {
                 className="overflow-hidden border-border/50 hover:border-primary hover:shadow-glow transition-all duration-300 animate-fade-in group"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <div className="aspect-video bg-muted relative overflow-hidden">
+                <div className="aspect-video bg-muted relative">
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <div className="flex space-x-4">
@@ -86,12 +63,12 @@ const Projects = () => {
                           Code
                         </a>
                       </Button>
-                      <Button variant="hero" size="sm" asChild>
+                      {/*<Button variant="hero" size="sm" asChild>
                         <a href={project.demo} target="_blank" rel="noopener noreferrer">
                           <ExternalLink size={16} />
                           Demo
                         </a>
-                      </Button>
+                      </Button>*/}
                     </div>
                   </div>
                 </div>
@@ -148,11 +125,11 @@ const Projects = () => {
                       <Github size={16} />
                     </a>
                   </Button>
-                  <Button variant="ghost" size="sm" asChild>
+                  {/*<Button variant="ghost" size="sm" asChild>
                     <a href={project.demo} target="_blank" rel="noopener noreferrer">
                       <ExternalLink size={16} />
                     </a>
-                  </Button>
+                  </Button>*/}
                 </div>
               </Card>
             ))}

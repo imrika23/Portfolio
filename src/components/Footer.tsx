@@ -41,7 +41,7 @@ const Footer = () => {
             <h3 className="font-semibold">Connect</h3>
             <div className="flex space-x-4">
               <a 
-                href="https://github.com" 
+                href="https://github.com/imrika23" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
@@ -49,7 +49,7 @@ const Footer = () => {
                 <Github size={20} />
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/erika-joy-guamos-123456789/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
@@ -57,14 +57,16 @@ const Footer = () => {
                 <Linkedin size={20} />
               </a>
               <a 
-                href="mailto:contact@example.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=guamoserikajoy@gmail.com&su=Inquiry%20Regarding%20Your%20Portfolio&body=Dear%20Erika%2C%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20was%20impressed%20with%20your%20work.%20I%20would%20like%20to%20discuss%20a%20potential%20opportunity%20with%20you.%0D%0A%0D%0APlease%20let%20me%20know%20a%20convenient%20time%20to%20connect.%0D%0A%0D%0ABest%20regards%2C%0D%0A%5BYour%20Name%5D"
+                target="_blank" 
+                rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
               >
                 <Mail size={20} />
               </a>
             </div>
             <p className="text-sm text-muted-foreground">
-              contact@example.com
+              guamoserikajoy@gmail.com
             </p>
           </div>
         </div>

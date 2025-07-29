@@ -5,6 +5,7 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -23,45 +24,72 @@ const Contact = () => {
     });
   };
 
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    });
-    
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: ""
-    });
-    setIsSubmitting(false);
+
+    try {
+      const result = await emailjs.send(
+        'service_guamos23', 
+        'template_57ka6tf',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        'GwmrbAXy5oTz9biT8'
+      );
+
+      toast({
+        title: "Message sent!",
+        description: "Thank you for your message. I'll get back to you soon.",
+      });
+
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: ""
+      });
+
+    } catch (error) {
+      toast({
+        title: "Failed to send",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
     {
       icon: <Mail size={24} />,
       title: "Email",
-      value: "contact@example.com",
-      link: "mailto:contact@example.com"
+      value: "guamoserikajoy@gmail.com",
+      target: "_blank",
+      rel: "noopener noreferrer",
+      link: "https://mail.google.com/mail/?view=cm&fs=1&to=guamoserikajoy@gmail.com&su=Inquiry%20Regarding%20Your%20Portfolio&body=Dear%20Erika%2C%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20was%20impressed%20with%20your%20work.%20I%20would%20like%20to%20discuss%20a%20potential%20opportunity%20with%20you.%0D%0A%0D%0APlease%20let%20me%20know%20a%20convenient%20time%20to%20connect.%0D%0A%0D%0ABest%20regards%2C%0D%0A%5BYour%20Name%5D"
     },
+
     {
       icon: <Phone size={24} />,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567"
+      value: "+63 965 068 0895",
+      target: "_blank",
+      rel: "noopener noreferrer",
+      link: "tel:+639650680895"
     },
     {
       icon: <MapPin size={24} />,
       title: "Location",
-      value: "San Francisco, CA",
-      link: "https://maps.google.com"
+      value: "Oriental Mindoro, Philippines",
+      target: "_blank",
+      rel: "noopener noreferrer",
+      link: "https://www.google.com/maps/place/Oriental+Mindoro/@12.8697888,120.5113681,9z/data=!3m1!4b1!4m6!3m5!1s0x33bb61471e778851:0x94f1306262b234f!8m2!3d13.0564598!4d121.4069417!16zL20vMDFtdzdj?entry=ttu&g_ep=EgoyMDI1MDcyMi4wIKXMDSoASAFQAw%3D%3D"
     }
   ];
 
@@ -181,6 +209,8 @@ const Contact = () => {
                         <h4 className="font-medium">{info.title}</h4>
                         <a 
                           href={info.link}
+                          target={info.target}
+                          rel={info.rel}
                           className="text-muted-foreground hover:text-primary transition-colors"
                         >
                           {info.value}

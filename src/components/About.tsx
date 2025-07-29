@@ -12,10 +12,12 @@ const About = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-slide-in">
               <p className="text-lg text-muted-foreground mb-6">
-                I'm a passionate full-stack developer with over 5 years of experience 
-                creating digital solutions that make a difference. I specialize in 
-                modern web technologies and love bringing ideas to life through clean, 
-                efficient code.
+                I'm a passionate web developer with over a year of experience 
+                creating digital solutions that make an impact. I specialize in 
+                front-end development using modern web technologies, and I love 
+                bringing ideas to life through clean, user-friendly code. I'm 
+                currently expanding my skills toward full-stack development and 
+                always eager to learn, grow, and contribute to meaningful projects.
               </p>
               
               <p className="text-lg text-muted-foreground mb-6">
@@ -26,11 +28,11 @@ const About = () => {
               
               <div className="grid grid-cols-2 gap-4">
                 <Card className="p-4 text-center border-border/50 hover:border-primary transition-colors">
-                  <div className="text-2xl font-bold text-primary">50+</div>
+                  <div className="text-2xl font-bold text-primary">3</div>
                   <div className="text-sm text-muted-foreground">Projects Completed</div>
                 </Card>
                 <Card className="p-4 text-center border-border/50 hover:border-primary transition-colors">
-                  <div className="text-2xl font-bold text-primary">5+</div>
+                  <div className="text-2xl font-bold text-primary">1</div>
                   <div className="text-sm text-muted-foreground">Years Experience</div>
                 </Card>
               </div>
@@ -42,23 +44,11 @@ const About = () => {
                 <ul className="space-y-3 text-muted-foreground">
                   <li className="flex items-center">
                     <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-                    Frontend Development with React, Vue, and Angular
+                    Frontend Development with HTML, CSS, JavaScript, Java, and React
                   </li>
                   <li className="flex items-center">
                     <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-                    Backend Development with Node.js and Python
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-                    Database Design and Management
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-                    Cloud Architecture and DevOps
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-                    Mobile App Development
+                    Backend Development with Node.js, MySQL, Firebase and Python
                   </li>
                 </ul>
               </Card>

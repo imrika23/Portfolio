@@ -6,37 +6,31 @@ const Skills = () => {
     {
       icon: <Code size={32} />,
       title: "Frontend Development",
-      skills: ["React", "Vue.js", "TypeScript", "Tailwind CSS", "Next.js", "Angular"],
+      skills: ["HTML", "CSS", "JavaScript", "React", "Java"],
       color: "from-blue-500 to-cyan-500"
     },
     {
       icon: <Database size={32} />,
       title: "Backend Development",
-      skills: ["Node.js", "Python", "Express", "Django", "PostgreSQL", "MongoDB"],
+      skills: ["Node.js", "MySQL", "Firebase", "Python"],
       color: "from-green-500 to-emerald-500"
-    },
-    {
-      icon: <Cloud size={32} />,
-      title: "DevOps & Cloud",
-      skills: ["AWS", "Docker", "Kubernetes", "CI/CD", "Terraform", "Nginx"],
-      color: "from-purple-500 to-violet-500"
     },
     {
       icon: <Smartphone size={32} />,
       title: "Mobile Development",
-      skills: ["React Native", "Flutter", "iOS", "Android", "PWA", "Expo"],
+      skills: ["Flutter", "iOS", "Android"],
       color: "from-pink-500 to-rose-500"
     },
     {
       icon: <Globe size={32} />,
       title: "Web Technologies",
-      skills: ["HTML5", "CSS3", "JavaScript", "GraphQL", "REST APIs", "WebSockets"],
+      skills: ["HTML5", "CSS3", "JavaScript", "WebSockets"],
       color: "from-orange-500 to-amber-500"
     },
     {
       icon: <Zap size={32} />,
       title: "Tools & Others",
-      skills: ["Git", "VSCode", "Figma", "Jira", "Slack", "Postman"],
+      skills: ["Git", "GitHub", "VSCode", "Figma"],
       color: "from-teal-500 to-cyan-500"
     }
   ];
