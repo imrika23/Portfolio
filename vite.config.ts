@@ -5,9 +5,9 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/Portfolio/", 
+  base: "/Portfolio/", // Important for GitHub Pages
   build: {
-    outDir: "docs",
+    outDir: "docs",     // <-- Build output goes to /docs
   },
   server: {
     host: "::",
