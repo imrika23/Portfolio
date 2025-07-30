@@ -14,7 +14,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="min-h-screen pt-20 flex items-center justify-center relative">
+    <section className="min-h-screen pt-20 flex items-center justify-center relative">
       {/* Background with hexagonal pattern */}
       <div 
         className="absolute inset-0 opacity-5"
@@ -31,19 +31,19 @@ const Hero = () => {
       
       {/* Content */}
       <div className="container mx-auto px-4 text-center relative z-10">
-        <div className="max-w-6xl mx-auto animate-fade-in">
+        <div className="max-w-4xl mx-auto animate-fade-in">
       {/* Profile photo */}
-      <div className="max-w-5xl mx-auto animate-fade-in flex flex-col md:flex-row items-center md:items-center gap-8">
+      <div className="max-w-5xl mx-auto animate-fade-in flex flex-col md:flex-row items-center md:items-start gap-8">
         {/* Profile Image on the Left */}
         <img 
           src="/erika.jpg" 
           alt="Erika Joy Guamos" 
-          className="w-60 h-64 md:w-64 md:h-72 lg:w-72 lg:h-80 rounded-full object-cover object-top border-2 border-primary hover:shadow-glow transition-all hover:scale-105 duration-300"
+          className="w-52 h-60 rounded-full object-cover object-top border-2 border-primary hover:shadow-glow transition-all hover:scale-105 duration-300"
         />
 
         {/* Text Content on the Right */}
         <div className="text-center md:text-left">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
+          <h1 className="text-5xl md:text-7xl font-bold">
             <span className="inline-block mb-6 transition duration-300 hover:brightness-125 hover:scale-105">
               Erika Joy Guamos
             </span>
@@ -52,13 +52,13 @@ const Hero = () => {
             </span>
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground m-4">
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl">
             Crafting exceptional digital experiences with modern technologies and clean, scalable code.
           </p>
         </div>
       </div>
 
-    <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+    <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
       <Button
         variant="hero"
               size="lg" 
