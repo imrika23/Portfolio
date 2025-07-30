@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
@@ -6,6 +5,8 @@ import { Textarea } from "./ui/textarea";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from '@emailjs/browser';
+import ReCAPTCHA from "react-google-recaptcha";
+import { useRef, useState } from "react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +15,9 @@ const Contact = () => {
     subject: "",
     message: ""
   });
+
+  const [recaptchaToken, setRecaptchaToken] = useState("");
+  const recaptchaRef = useRef<ReCAPTCHA | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
@@ -24,27 +28,67 @@ const Contact = () => {
     });
   };
 
+  const isValidEmail = (email: string) => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const tempMailProviders = [
+    "mailinator.com", "guerrillamail.com", "10minutemail.com", "tempmail.com"
+  ];
+
+  const domain = email.split("@")[1]?.toLowerCase();
+  return emailRegex.test(email) && !tempMailProviders.includes(domain);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    const form = e.currentTarget as HTMLFormElement;
+    const honeypot = (form.elements.namedItem("honeypot") as HTMLInputElement).value;
+
+    if (honeypot) {
+      console.log("Spam detected. Submission blocked.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    if (!isValidEmail(formData.email)) {
+      toast({
+        title: "Invalid email",
+        description: "Please enter a valid, non-temporary email address.",
+        variant: "destructive",
+      });
+    setIsSubmitting(false);
+    return;
+    }
+
+    if (!recaptchaToken) {
+      toast({
+        title: "Captcha required",
+        description: "Please complete the reCAPTCHA to verify you're not a robot.",
+        variant: "destructive",
+        duration: 4000,
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
-      const result = await emailjs.send(
-        'service_guamos23', 
-        'template_57ka6tf',
+      await emailjs.send(
+        "service_guamos23",
+        "template_57ka6tf",
         {
           from_name: formData.name,
           from_email: formData.email,
           subject: formData.subject,
-          message: formData.message,
+          message: formData.message
         },
-        'GwmrbAXy5oTz9biT8'
+        "GwmrbAXy5oTz9biT8"
       );
 
       toast({
         title: "Message sent!",
         description: "Thank you for your message. I'll get back to you soon.",
+        duration: 4000,
       });
 
       setFormData({
@@ -54,15 +98,22 @@ const Contact = () => {
         message: ""
       });
 
+      recaptchaRef.current?.reset();
+      setRecaptchaToken(""); // reset captcha
+
     } catch (error) {
       toast({
         title: "Failed to send",
-        description: "Something went wrong. Please try again later.",
+        description: "Something went wrong. Please try again.",
         variant: "destructive",
+        duration: 4000,
       });
     } finally {
       setIsSubmitting(false);
     }
+  };
+  const handleRecaptchaChange = (token: string | null) => {
+    setRecaptchaToken(token || "");
   };
 
   const contactInfo = [
@@ -104,9 +155,15 @@ const Contact = () => {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <Card className="p-8 border-border/50 hover:shadow-glow transition-all duration-300 animate-slide-in">
-              <h3 className="text-2xl font-semibold mb-6">Send me a message</h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">
+                <input
+                  type="text"
+                  name="honeypot"
+                  value=""
+                  onChange={() => {}}
+                  className="hidden"
+                />
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium mb-2">
@@ -121,6 +178,7 @@ const Contact = () => {
                       placeholder="Your name"
                     />
                   </div>
+
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium mb-2">
                       Email
@@ -165,7 +223,17 @@ const Contact = () => {
                     placeholder="Tell me about your project..."
                   />
                 </div>
-                
+
+                <div className="flex justify-center" style={{ transform: "scale(0.75)" }}>
+                  <ReCAPTCHA
+                    ref={recaptchaRef}
+                    sitekey="6LfVKJMrAAAAAEeTk6xacWFMYP859NbGsTvJazQt"
+                    theme="dark"
+                    onChange={handleRecaptchaChange}
+                  />
+
+                </div>
+
                 <Button 
                   type="submit" 
                   variant="hero" 
