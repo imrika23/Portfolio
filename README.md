@@ -1,4 +1,4 @@
-# Welcome to my Portfolio where i showcase my projetcs
+# Welcome to my Portfolio where i showcase my projects
 
 ## Project info
 
