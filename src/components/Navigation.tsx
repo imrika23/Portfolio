@@ -42,7 +42,7 @@ const Navigation = () => {
               </button>
             ))}
             <Button variant="hero" size="sm" asChild>
-              <a href="/Erika Joy Guamos-CV.pdf" download>
+              <a href={`${import.meta.env.BASE_URL}/Erika Joy Guamos-CV.pdf`} download>
                 Download CV
               </a>
             </Button>
