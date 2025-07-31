@@ -42,10 +42,12 @@ const Navigation = () => {
               </button>
             ))}
             <Button variant="hero" size="sm" asChild>
-              <a href="/Erika Joy Guamos-CV.pdf" download>
+              <a href="/Portfolio/Erika%20Joy%20Guamos-CV.pdf" download>
                 Download CV
               </a>
             </Button>
+
+
           </div>
 
           {/* Mobile Menu Button */}

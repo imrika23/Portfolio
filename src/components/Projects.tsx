@@ -27,7 +27,7 @@ const Projects = () => {
       description: "Face recognition app use for attendance tracking with secure data storage using Firebase.",
       image: "/facere.png",
       tech: ["React Native", "Node.js", "Firebase"],
-      github: "https://github.com",
+      github: "https://github.com/imrika23/FaceRe.git",
       /*demo: "https://demo.com",*/
       featured: true
     },
