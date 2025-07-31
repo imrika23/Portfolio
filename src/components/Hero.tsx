@@ -36,7 +36,7 @@ const Hero = () => {
       <div className="max-w-5xl mx-auto animate-fade-in flex flex-col md:flex-row items-center md:items-center gap-8">
         {/* Profile Image on the Left */}
         <img 
-          src="/erika.jpg" 
+          src="/Portfolio/erika.jpg" 
           alt="Erika Joy Guamos" 
           className="w-60 h-64 md:w-64 md:h-72 lg:w-72 lg:h-80 rounded-full object-cover object-top border-2 border-primary hover:shadow-glow transition-all hover:scale-105 duration-300"
         />

@@ -7,7 +7,7 @@ const Projects = () => {
     {
       title: "Point of Sale System",
       description: "A full-stack point of sale system with MySQL and Visual Studio. Features include user authentication, payment processing, and admin dashboard.",
-      image: "/POS.jpg",
+      image: "/Portfolio/POS.jpg",
       tech: ["MySQL", "Visual Basic", "Visual Studio"],
       github: "https://github.com/imrika23/Point-of-Sale.git",
       /*demo: "https://demo.com",*/
@@ -16,7 +16,7 @@ const Projects = () => {
     {
       title: "Calculator",
       description: "A simple calculator application built with HTML, CSS and JavaScript.",
-      image: "/calculator.png",
+      image: "/Portfolio/calculator.png",
       tech: ["HTML", "CSS", "JavaScript"],
       github: "https://github.com/imrika23/Calculator.git",
       /*demo: "https://demo.com",*/
@@ -25,7 +25,7 @@ const Projects = () => {
     {
       title: "FaceRe",
       description: "Face recognition app use for attendance tracking with secure data storage using Firebase.",
-      image: "/facere.png",
+      image: "/Portfolio/facere.png",
       tech: ["Dart", "HTML", "Node.js", "C++", "Ruby", "Firebase"],
       github: "https://github.com/imrika23/FaceRe.git",
       /*demo: "https://demo.com",*/
