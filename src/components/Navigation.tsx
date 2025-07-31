@@ -42,7 +42,7 @@ const Navigation = () => {
               </button>
             ))}
             <Button variant="hero" size="sm" asChild>
-              <a href="/Erika Joy Guamos-CV.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="/Portfolio/Erika Joy Guamos-CV.pdf" target="_blank" rel="noopener noreferrer">
                 Download CV
               </a>
             </Button>
@@ -71,7 +71,7 @@ const Navigation = () => {
                 </button>
               ))}
               <Button variant="hero" size="sm" className="w-fit" asChild>
-                <a href="/Erika Joy Guamos-CV.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="/Portfolio/Erika Joy Guamos-CV.pdf" target="_blank" rel="noopener noreferrer">
                   Download CV
                 </a>
               </Button>
